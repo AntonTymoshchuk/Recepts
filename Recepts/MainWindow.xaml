@@ -1,0 +1,66 @@
+﻿<Window x:Class="Recepts.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Recepts"
+        mc:Ignorable="d"
+        Title="Recepts" Width="900" Height="600">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="1"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListBox x:Name="receptsTextBox" Grid.Column="0" BorderThickness="0">
+            
+        </ListBox>
+        <GridSplitter Grid.Column="1" Background="Gray" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <FlowDocumentReader Grid.Column="2">
+            <FlowDocument IsHyphenationEnabled="False" IsOptimalParagraphEnabled="False" ColumnRuleBrush="Gray" ColumnRuleWidth="1">
+                <Paragraph FontSize="36" TextAlignment="Center">
+                    <Run x:Name="titleRun" Text="Title"/>
+                </Paragraph>
+                <Paragraph>
+                    <Figure Width="200" Height="200" BorderThickness="0" HorizontalAnchor="PageLeft">
+                        <Paragraph>
+                            <Image x:Name="productImage" Source="/Images/Pizza.jpg"/>
+                        </Paragraph>
+                    </Figure>
+                    <Floater FontSize="24">
+                        <List x:Name="ingredientsList" MarkerStyle="UpperRoman">
+                            <ListItem>
+                                <Paragraph>
+                                    <Run Text="Тесто дрожжевое для пиццы – 400 г"/>
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>
+                                    <Run Text="Ветчина – 200 г"/>
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>
+                                    <Run Text="Оливки черные без косточек – 280 г"/>
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>
+                                    <Run Text="Сыр – 200 г"/>
+                                </Paragraph>
+                            </ListItem>
+                            <ListItem>
+                                <Paragraph>
+                                    <Run Text="Травы итальянские сухие - 1 ч. л."/>
+                                </Paragraph>
+                            </ListItem>
+                        </List>
+                    </Floater>
+                </Paragraph>
+                <Paragraph>
+                    <Run x:Name="overviewRun" Text="Я очень люблю пиццу. Перепробовала много рецептов и определила для себя, что пицца именно по этому рецепту - как я люблю. Не использую в пицце майонез и кетчуп. Вместо кетчупа смазываю основу домашним томатным соусом, и мне кажется, что именно поэтому пицца получается необыкновенно вкусной и ароматной - вкуснее, чем в любой пиццерии."/>
+                </Paragraph>
+            </FlowDocument>
+        </FlowDocumentReader>
+    </Grid>
+</Window>
